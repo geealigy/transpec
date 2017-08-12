@@ -7,8 +7,8 @@ rvm:
   - 2.3.4
   - 2.4.1
   - ruby-head
-  - jruby-19mode
-  - jruby-9.1.8.0
+  - jruby-1.7
+  - jruby
 env:
   - RSPEC_VERSION=2.14
   - RSPEC_VERSION=2.99

@@ -213,17 +213,12 @@ class READMEContext
     def ruby_name_from(id)
       implementation, version = id.split('-', 2)
 
-      if version.nil?
+      if implementation == 'jruby'
+        implementation = 'JRuby'
+        version ||= '9000'
+      elsif version.nil?
         version = implementation
         implementation = 'MRI'
-      elsif implementation == 'jruby'
-        implementation = 'JRuby'
-      else
-        implementation.capitalize!
-      end
-
-      if /\A(?<major>\d)(?<minor>\d)mode\z/ =~ version
-        version = "in #{major}.#{minor} mode"
       end
 
       "#{implementation} #{version}"
